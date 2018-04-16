@@ -1,0 +1,22 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimaKabanov/project-lvl1-s256.git"
+  },
+  "keywords": [
+    "brain-games"
+  ],
+  "author": "Dmitry Kabanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DimaKabanov/project-lvl1-s256/issues"
+  },
+  "homepage": "https://github.com/DimaKabanov/project-lvl1-s256#readme"
+}

@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { getNameOfPlayer, sayPlayerHi } from '..';
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const isEvenNumber = number => number % 2 === 0;
@@ -6,10 +7,9 @@ const isSayYes = str => str === 'yes';
 const isSayNo = str => str === 'no';
 
 const game = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hi ${userName}!`);
+  const userName = getNameOfPlayer();
+  sayPlayerHi(userName);
+
   const startAttempt = 1;
   const maxCountAttempts = 3;
 
@@ -30,7 +30,7 @@ const game = () => {
       if (isSayYes(playerResponse)) {
         console.log('Correct!');
       } else if (isSayNo(playerResponse)) {
-        console.log(`'no' is wrong answer ;(. Correct answer was 'yes'. Let's try again, ${userName}!`);
+        return `'no' is wrong answer ;(. Correct answer was 'yes'. Let's try again, ${userName}!`;
       }
     }
 
@@ -38,7 +38,7 @@ const game = () => {
       if (isSayNo(playerResponse)) {
         console.log('Correct!');
       } else if (isSayYes(playerResponse)) {
-        console.log(`'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${userName}!`);
+        return `'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${userName}!`;
       }
     }
 

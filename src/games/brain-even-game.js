@@ -1,14 +1,11 @@
-import readlineSync from 'readline-sync';
-import { getNameOfPlayer, sayPlayerHi } from '..';
+import { getNameOfPlayer, sayPlayerHi, askQuestionToPlayer, getAnswerOfPlayer } from '..';
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const isEvenNumber = number => number % 2 === 0;
-const isSayYes = str => str === 'yes';
-const isSayNo = str => str === 'no';
 
 const game = () => {
-  const userName = getNameOfPlayer();
-  sayPlayerHi(userName);
+  const playersName = getNameOfPlayer();
+  sayPlayerHi(playersName);
 
   const startAttempt = 1;
   const maxCountAttempts = 3;
@@ -19,27 +16,14 @@ const game = () => {
     }
 
     const randomNumber = getRandomNumber(1, 100);
-    console.log(`Question: ${randomNumber}`);
-    const playerResponse = readlineSync.question('Your answer: ');
+    askQuestionToPlayer(randomNumber);
+    const playersAnswer = getAnswerOfPlayer();
+    const correctAnswer = isEvenNumber(randomNumber) ? 'yes' : 'no';
 
-    if (!isSayYes(playerResponse) && !isSayNo(playerResponse)) {
-      return `Incorrect answer. Let's try again, ${userName}.`;
-    }
-
-    if (isEvenNumber(randomNumber)) {
-      if (isSayYes(playerResponse)) {
-        console.log('Correct!');
-      } else if (isSayNo(playerResponse)) {
-        return `'no' is wrong answer ;(. Correct answer was 'yes'. Let's try again, ${userName}!`;
-      }
-    }
-
-    if (!isEvenNumber(randomNumber)) {
-      if (isSayNo(playerResponse)) {
-        console.log('Correct!');
-      } else if (isSayYes(playerResponse)) {
-        return `'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${userName}!`;
-      }
+    if (playersAnswer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      return `'${playersAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${playersName}!`;
     }
 
     return iter(countAttempts + 1);

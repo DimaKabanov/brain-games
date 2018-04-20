@@ -1,3 +1,5 @@
+import runGameEngine from '../game-engine';
+import { sayPlayerWelcome } from '..';
 import { getRandomNumber } from '../numbers';
 
 const getRandomOperation = () => {
@@ -21,7 +23,7 @@ const calcResultOperation = (leftOperand, rightOperand) => {
   return result;
 };
 
-const gameProcess = () => {
+const generateInformationForCalcGame = () => {
   const leftOperand = getRandomNumber(1, 10);
   const rightOperand = getRandomNumber(1, 10);
   const operation = getRandomOperation();
@@ -35,5 +37,11 @@ const gameProcess = () => {
   };
 };
 
-export default gameProcess;
+const runCalc = () => {
+  sayPlayerWelcome();
+  console.log('What is the result of the expression?');
+  runGameEngine(generateInformationForCalcGame);
+};
+
+export default runCalc;
 

@@ -1,6 +1,6 @@
 import { getNameOfPlayer, sayPlayerHi, askQuestionToPlayer, getAnswerOfPlayer } from '.';
 
-const game = (gameProcess) => {
+const runGameEngine = (getInformation) => {
   const playersName = getNameOfPlayer();
   sayPlayerHi(playersName);
   const maxCountAttempts = 3;
@@ -10,7 +10,7 @@ const game = (gameProcess) => {
       return 'Congratulations';
     }
 
-    const { question, correctAnswer } = gameProcess();
+    const { question, correctAnswer } = getInformation();
     askQuestionToPlayer(question);
     const playersAnswer = getAnswerOfPlayer();
 
@@ -26,4 +26,4 @@ const game = (gameProcess) => {
   console.log(iter(1));
 };
 
-export default game;
+export default runGameEngine;

@@ -1,6 +1,4 @@
-import { getRandomNumber } from '..';
-
-const isEvenNumber = number => number % 2 === 0;
+import { getRandomNumber, isEvenNumber } from '../numbers';
 
 const gameProcess = () => {
   const question = getRandomNumber(1, 100);

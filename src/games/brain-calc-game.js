@@ -1,24 +1,25 @@
-import { getRandomNumber } from '..';
+import { getRandomNumber } from '../numbers';
 
 const getRandomOperation = () => {
   const operations = ['+', '-', '*'];
   return operations[getRandomNumber(0, 3)];
 };
 
-const calcResultOfMathOperation = (leftOperand, rightOperand, operation) => {
-  let result;
-  switch (operation) {
-    case '+':
-      result = leftOperand + rightOperand;
-      break;
-    case '-':
-      result = leftOperand - rightOperand;
-      break;
-    case '*':
-      result = leftOperand * rightOperand;
-      break;
-    default:
-      break;
+const calcResultOperation = (leftOperand, rightOperand) => {
+  const result = (operation) => {
+    switch (operation) {
+      case '+':
+        return leftOperand + rightOperand;
+        break;
+      case '-':
+        return leftOperand - rightOperand;
+        break;
+      case '*':
+        return leftOperand * rightOperand;
+        break;
+      default:
+        break;
+    }
   }
   return result;
 };
@@ -29,7 +30,7 @@ const gameProcess = () => {
   const operation = getRandomOperation();
 
   const question = `${leftOperand} ${operation} ${rightOperand}`;
-  const correctAnswer = `${calcResultOfMathOperation(leftOperand, rightOperand, operation)}`;
+  const correctAnswer = `${calcResultOperation(leftOperand, rightOperand)(operation)}`;
 
   return {
     question,

@@ -12,4 +12,3 @@ export const askQuestionToPlayer = (data) => {
 
 export const getAnswerOfPlayer = () => readlineSync.question('Your answer: ');
 
-export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;

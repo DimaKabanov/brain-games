@@ -6,6 +6,10 @@ export const sayPlayerWelcome = () => {
   console.log('Welcome to the Brain Games!');
 };
 
+export const sayPlayerTask = (task) => {
+  console.log(task);
+};
+
 export const sayPlayerHi = (userName) => {
   console.log(`Hi ${userName}!`);
 };

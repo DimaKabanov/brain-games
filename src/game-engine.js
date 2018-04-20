@@ -1,8 +1,11 @@
-import { getNameOfPlayer, sayPlayerHi, askQuestionToPlayer, getAnswerOfPlayer } from '.';
+import { sayPlayerWelcome, sayPlayerTask, getNameOfPlayer, sayPlayerHi, askQuestionToPlayer, getAnswerOfPlayer } from '.';
 
-const runGameEngine = (getInformation) => {
+const runGameEngine = (task, getInformation) => {
+  sayPlayerWelcome();
+  sayPlayerTask(task);
   const playersName = getNameOfPlayer();
   sayPlayerHi(playersName);
+
   const maxCountAttempts = 3;
 
   const iter = (countAttempts) => {

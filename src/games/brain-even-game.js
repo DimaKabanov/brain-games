@@ -1,6 +1,7 @@
 import runGameEngine from '../game-engine';
-import { sayPlayerWelcome } from '..';
 import { getRandomNumber, isEvenNumber } from '../numbers';
+
+const task = 'Answer "yes" if number even otherwise answer "no".';
 
 const generateInformationForEvenGame = () => {
   const question = getRandomNumber(1, 100);
@@ -13,9 +14,7 @@ const generateInformationForEvenGame = () => {
 };
 
 const runEven = () => {
-  sayPlayerWelcome();
-  console.log('Answer "yes" if number even otherwise answer "no".');
-  runGameEngine(generateInformationForEvenGame);
+  runGameEngine(task, generateInformationForEvenGame);
 };
 
 export default runEven;

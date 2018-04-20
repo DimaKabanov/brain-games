@@ -10,17 +10,14 @@ const calcResultOperation = (leftOperand, rightOperand) => {
     switch (operation) {
       case '+':
         return leftOperand + rightOperand;
-        break;
       case '-':
         return leftOperand - rightOperand;
-        break;
       case '*':
         return leftOperand * rightOperand;
-        break;
       default:
-        break;
+        throw new Error(`Incorrect operation '${operation}'`);
     }
-  }
+  };
   return result;
 };
 

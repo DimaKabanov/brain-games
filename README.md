@@ -15,3 +15,16 @@ npm install -g dk-brain-games
 ```console
 make install
 ```
+
+## Available games
+
+```console
+<!-- Even or odd number -->
+brain-even
+
+<!-- Сalculate the value of a mathematical expression -->
+brain-calc
+
+<!-- Find the largest common divisor of two numbers -->
+brain-gcd
+```

@@ -27,4 +27,7 @@ brain-calc
 
 <!-- Find the largest common divisor of two numbers -->
 brain-gcd
+
+<!-- Balance the given number -->
+brain-balance
 ```

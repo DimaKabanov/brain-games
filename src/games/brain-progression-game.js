@@ -28,16 +28,7 @@ const createCorrectAnswer = (progression, lengthAnswer) => {
   return iter(lengthAnswer, []);
 };
 
-const hideItemsProgression = (progression, hiddenItems) => {
-  const result = progression.reduce((acc, item) => {
-    if (hiddenItems.includes(item)) {
-      return acc.concat('..');
-    }
-    return acc.concat(item);
-  }, []);
-
-  return result;
-};
+const hideItemsProgression = (progression, hiddenItems) => progression.map(item => (hiddenItems.includes(item) ? '..' : item));
 
 const task = 'What number is missing in this progression?';
 

@@ -30,4 +30,7 @@ brain-gcd
 
 <!-- Balance the given number -->
 brain-balance
+
+<!-- What number is missing in this progression? -->
+brain-progression
 ```

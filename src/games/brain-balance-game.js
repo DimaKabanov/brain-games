@@ -1,12 +1,5 @@
 import runGameEngine from '../game-engine';
-import { getRandomNumber } from '../numbers';
-
-const compareNumbers = (a, b) => {
-  if (a < b) {
-    return -1;
-  }
-  return 1;
-};
+import { getRandomNumber, compareNumbers } from '../numbers';
 
 const findeSmallestNumber = arr => Math.min(...arr);
 const findeBiggestNumber = arr => Math.max(...arr);

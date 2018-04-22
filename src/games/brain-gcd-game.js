@@ -1,7 +1,7 @@
 import runGameEngine from '../game-engine';
 import { getRandomNumber } from '../numbers';
 
-const FindGreatestCommonDivisor = (numberOne, numberTwo) => {
+const findGreatestCommonDivisor = (numberOne, numberTwo) => {
   if (numberOne === numberTwo) {
     return numberOne;
   }
@@ -28,7 +28,7 @@ const generateInformationForGcdGame = () => {
   const numberTwo = getRandomNumber(1, 200);
 
   const questionData = `${numberOne} ${numberTwo}`;
-  const correctAnswer = `${FindGreatestCommonDivisor(numberOne, numberTwo)}`;
+  const correctAnswer = `${findGreatestCommonDivisor(numberOne, numberTwo)}`;
 
   return {
     questionData,

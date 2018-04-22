@@ -13,17 +13,30 @@ export const isPrimeNumber = (number) => {
     return false;
   }
 
-  const iter = (devider) => {
-    if (devider > Math.sqrt(number)) {
+  const iter = (divider) => {
+    if (divider > Math.sqrt(number)) {
       return true;
     }
 
-    if (number % devider === 0) {
+    if (number % divider === 0) {
       return false;
     }
 
-    return iter(devider + 1);
+    return iter(divider + 1);
   };
 
   return iter(2);
+};
+
+export const getRandomArrNumbers = (amount, start, end) => {
+  const iter = (acc) => {
+    if (acc.length > amount - 1) {
+      return acc;
+    }
+
+    const randomNumber = getRandomNumber(start, end);
+    return iter(acc.includes(randomNumber) ? acc : acc.concat(randomNumber));
+  };
+
+  return iter([]);
 };

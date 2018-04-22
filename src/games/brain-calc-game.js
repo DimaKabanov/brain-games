@@ -29,11 +29,11 @@ const generateInformationForCalcGame = () => {
   const rightOperand = getRandomNumber(1, 10);
   const operation = getRandomOperation();
 
-  const question = `${leftOperand} ${operation} ${rightOperand}`;
+  const questionData = `${leftOperand} ${operation} ${rightOperand}`;
   const correctAnswer = `${calcResultOperation(leftOperand, rightOperand)(operation)}`;
 
   return {
-    question,
+    questionData,
     correctAnswer,
   };
 };

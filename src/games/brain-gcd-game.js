@@ -20,11 +20,11 @@ const generateInformationForGcdGame = () => {
   const numberOne = getRandomNumber(1, 20);
   const numberTwo = getRandomNumber(1, 20);
 
-  const question = `${numberOne} ${numberTwo}`;
+  const questionData = `${numberOne} ${numberTwo}`;
   const correctAnswer = `${FindGreatestCommonDivisor(numberOne, numberTwo)}`;
 
   return {
-    question,
+    questionData,
     correctAnswer,
   };
 };

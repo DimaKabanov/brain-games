@@ -49,11 +49,11 @@ const createInformationForProgressionGame = () => {
   const currentProgression = createProgression(startNumber, step, lengthProgression);
   const currentCorrectAnswer = createCorrectAnswer(currentProgression, lengthAnswer);
 
-  const question = hideItemsProgression(currentProgression, currentCorrectAnswer).join(' ');
+  const questionData = hideItemsProgression(currentProgression, currentCorrectAnswer).join(' ');
   const correctAnswer = currentCorrectAnswer.sort(compareNumbers).join(' ');
 
   return {
-    question,
+    questionData,
     correctAnswer,
   };
 };

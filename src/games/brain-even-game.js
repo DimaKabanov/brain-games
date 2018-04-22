@@ -4,11 +4,11 @@ import { getRandomNumber, isEvenNumber } from '../numbers';
 const task = 'Answer "yes" if number even otherwise answer "no".';
 
 const generateInformationForEvenGame = () => {
-  const question = getRandomNumber(1, 100);
-  const correctAnswer = isEvenNumber(question) ? 'yes' : 'no';
+  const questionData = getRandomNumber(1, 100);
+  const correctAnswer = isEvenNumber(questionData) ? 'yes' : 'no';
 
   return {
-    question,
+    questionData,
     correctAnswer,
   };
 };

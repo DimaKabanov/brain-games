@@ -14,8 +14,8 @@ export const sayPlayerHi = (userName) => {
   console.log(`Hi ${userName}!`);
 };
 
-export const askQuestionToPlayer = (data) => {
-  console.log(`Question: ${data}`);
+export const askQuestionToPlayer = (text = 'Question:', data) => {
+  console.log(`${text} ${data}`);
 };
 
 export const getAnswerOfPlayer = () => readlineSync.question('Your answer: ');

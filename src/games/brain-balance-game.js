@@ -32,11 +32,11 @@ const task = 'Balance the given number.';
 const generateInformationForBalanceGame = () => {
   const number = getRandomNumber(1, 9999);
 
-  const question = `${number}`;
+  const questionData = `${number}`;
   const correctAnswer = balanceNumber(number);
 
   return {
-    question,
+    questionData,
     correctAnswer,
   };
 };

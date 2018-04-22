@@ -13,8 +13,8 @@ const runGameEngine = (task, getInformation) => {
       return 'Congratulations';
     }
 
-    const { question, correctAnswer } = getInformation();
-    askQuestionToPlayer(question);
+    const { questionText, questionData, correctAnswer } = getInformation();
+    askQuestionToPlayer(questionText, questionData);
     const playersAnswer = getAnswerOfPlayer();
 
     if (playersAnswer === correctAnswer) {

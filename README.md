@@ -26,7 +26,7 @@ make install
 - [brain-prime](#brain-prime) - prime or composite number
 
 
-## Example game:
+## Example games
 
 **<a name="brain-even"></a>brain-even**
 ```console

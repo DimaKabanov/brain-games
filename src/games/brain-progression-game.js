@@ -2,15 +2,15 @@ import runGameEngine from '../game-engine';
 import { getRandomNumber, getRandomArrNumbers } from '../numbers';
 
 const createProgression = (start, step, length) => {
-  const iter = (counter, previousNumber, acc) => {
-    if (counter === 0) {
+  const iter = (counter, acc) => {
+    if (counter > length) {
       return acc;
     }
-    const nextNumber = previousNumber + step;
-    return iter(counter - 1, nextNumber, acc.concat(nextNumber));
+    const nextNumber = start + ((counter - 1) * step);
+    return iter(counter + 1, acc.concat(nextNumber));
   };
 
-  return iter(length, start, [start]);
+  return iter(2, [start]);
 };
 
 const task = 'What number is missing in this progression?';
